@@ -15,4 +15,6 @@ Imports:
     dplyr, 
     redivis.bigrquery,
     stringr
+Remotes:
+    redivis/bigrquery
 RoxygenNote: 7.1.1
