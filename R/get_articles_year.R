@@ -1,13 +1,9 @@
 #' get_articles_year
 #'
 #' Get a Single Years Worth of Articles
-#'
-#' @format Year:
-#' \describe{
-#'   \item{x}{placeholder}
-#'
-#' }
 #' @export
+#' @examples
+#' get_articles_year("1977")
 
 get_articles_year <- function(i) {
     sql <- paste0("SELECT publish_date, section, authors, title, paragraphs FROM `sul.washington_post.articles_", i, "`")

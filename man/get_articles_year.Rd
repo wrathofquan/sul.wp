@@ -3,16 +3,12 @@
 \name{get_articles_year}
 \alias{get_articles_year}
 \title{get_articles_year}
-\format{
-Year:
-\describe{
-  \item{x}{placeholder}
-
-}
-}
 \usage{
 get_articles_year(i)
 }
 \description{
 Get a Single Years Worth of Articles
+}
+\examples{
+get_articles_year("1977")
 }
