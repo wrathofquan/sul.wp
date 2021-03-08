@@ -7,6 +7,8 @@
 #'   \item{x}{placeholder}
 #'
 #' }
+#' @export
+#' @useDynLib redivis/bigrquery
 redivis_auth <- function(i) {
   Sys.setenv(REDIVIS_API_TOKEN = i)
 }
