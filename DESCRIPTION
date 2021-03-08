@@ -8,7 +8,9 @@ Description: Shares data from the Washington Post archives 1970-2020 in format e
 License: file LICENSE
 Encoding: UTF-8
 LazyData: true
-Suggests: 
+Depends:
+    R (>= 4.0)
+Imports: 
     DBI,
     dplyr, 
     redivis.bigrquery,
