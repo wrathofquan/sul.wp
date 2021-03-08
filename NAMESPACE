@@ -2,5 +2,3 @@
 
 export(get_articles_year)
 export(redivis_auth)
-useDynLib("redivis/bigrquery")
-useDynLib(DBI)
