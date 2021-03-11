@@ -8,11 +8,11 @@
 
 search_articles <- function(query = query, year = NULL){
   if(missing(year)) {
-    sql <- paste0("SELECT publish_date, section, authors, title, paragraphs FROM `sul.washington_post.articles_all` WHERE paragraphs LIKE '%", query,"%'")
+    sql <- paste0("SELECT publish_date, section, authors, title, paragraphs FROM `sul.washington_post.articles_all` WHERE REGEXP_CONTAINS (paragraphs, '(?i)", query,"')")
     tb <- redivis.bigrquery::bq_project_query(sql)
     df <- redivis.bigrquery::bq_table_download(tb)
   } else {
-      sql <- paste0("SELECT publish_date, section, authors, title, paragraphs FROM `sul.washington_post.articles_", year, "` WHERE paragraphs LIKE '%", query, "%'")
+      sql <- paste0("SELECT publish_date, section, authors, title, paragraphs FROM `sul.washington_post.articles_", year, "` WHERE REGEXP_CONTAINS (paragraphs, '(?i)", query,"')")
       tb <- redivis.bigrquery::bq_project_query(sql)
       df <- redivis.bigrquery::bq_table_download(tb)
   }
