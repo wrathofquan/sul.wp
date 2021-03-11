@@ -4,7 +4,7 @@
 \alias{get_articles_year}
 \title{get_articles_year}
 \usage{
-get_articles_year(i)
+get_articles_year(year)
 }
 \description{
 Get a Single Years Worth of Articles
