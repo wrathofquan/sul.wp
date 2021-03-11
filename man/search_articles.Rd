@@ -7,8 +7,8 @@
 search_articles(query = query, year = NULL)
 }
 \description{
-Search by keyword across all years or in specific year
+Search by Keyword Across all Years or in One Specific Year
 }
 \examples{
-search_articles(query = "China", year = "1977")
+search_articles(query = "police", year = "1977")
 }
