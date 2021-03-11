@@ -20,8 +20,9 @@ search_articles <- function(query = query, year = NULL, strip_html = FALSE){
     purrr::map_df(df, function(i){
       df <- gsub("<.*?>", "", i)
     })
-  } else{
+  } else {
     return(df)
   }
 }
+
 
