@@ -4,7 +4,7 @@
 \alias{search_articles}
 \title{search_articles}
 \usage{
-search_articles(query = query, year = NULL)
+search_articles(query = query, year = NULL, strip_html = FALSE)
 }
 \description{
 Search by Keyword Across all Years or in One Specific Year
