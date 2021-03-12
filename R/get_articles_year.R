@@ -1,6 +1,7 @@
 #' get_articles_year
 #'
 #' Get a Single Years Worth of Articles
+#' @param year A year
 #' @export
 #' @examples
 #' get_articles_year("1977")

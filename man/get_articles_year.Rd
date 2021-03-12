@@ -6,6 +6,9 @@
 \usage{
 get_articles_year(year)
 }
+\arguments{
+\item{year}{A year}
+}
 \description{
 Get a Single Years Worth of Articles
 }

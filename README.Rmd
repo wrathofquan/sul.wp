@@ -34,7 +34,7 @@ library(sul.wp)
 ## Authenticate with Redivis/BigQuery 
 ## Instructions on how to access your token: https://apidocs.redivis.com/authorization
 
-#redivis_auth("your-api-token")
+# redivis_auth("your-api-token")
 ```
 
 
@@ -50,12 +50,12 @@ head(df_1977)
 
 ```
 
-### Search Corpora by Keyword
+### Search Corpus by Keyword
 
 ```{r}
 ## Search by case-insensitive keyword, restrict by year, remove <html> formatting from articles
 
-df_blm <- search_articles(query = "Black Lives Matter", year = "2016", strip_html = FALSE)
+df_blm <- search_articles(query = "Black Lives Matter", year = "2016", strip_html = TRUE)
 
 head(df_blm)
 

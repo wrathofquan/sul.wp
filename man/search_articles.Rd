@@ -6,9 +6,16 @@
 \usage{
 search_articles(query = query, year = NULL, strip_html = FALSE)
 }
+\arguments{
+\item{query}{A Keyword to run}
+
+\item{year}{A Year}
+
+\item{strip_html}{Removes <HTML> tags}
+}
 \description{
 Search by Keyword Across all Years or in One Specific Year
 }
 \examples{
-search_articles(query = "police", year = "1977")
+search_articles(query = "Brexit", year = "2016")
 }

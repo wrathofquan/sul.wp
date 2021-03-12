@@ -24,7 +24,7 @@ library(sul.wp)
 ## Authenticate with Redivis/BigQuery 
 ## Instructions on how to access your token: https://apidocs.redivis.com/authorization
 
-#redivis_auth("your-api-token")
+# redivis_auth("your-api-token")
 ```
 
 ### Retrieve Articles by Year
@@ -46,20 +46,20 @@ head(df_1977)
 #> 6 1977-05-07T00:0… local   <NA>    "Today: Rain, Hi… "Weather: Today - Rain, hi…
 ```
 
-### Search Corpora by Keyword
+### Search Corpus by Keyword
 
 ``` r
 ## Search by case-insensitive keyword, restrict by year, remove <html> formatting from articles
 
-df_blm <- search_articles(query = "Black Lives Matter", year = "2016", strip_html = FALSE)
+df_blm <- search_articles(query = "Black Lives Matter", year = "2016", strip_html = TRUE)
 
 head(df_blm)
 #> # A tibble: 6 x 5
 #>   publish_date    section   authors      title             paragraphs           
 #>   <chr>           <chr>     <chr>        <chr>             <chr>                
-#> 1 2016-09-05T06:… postever… Jared Berns… Labor Day spillo… " <p channel=\"wp.co…
-#> 2 2016-01-18T18:… /politic… Team Fix     The 4th Democrat… "<em>The complete tr…
-#> 3 2016-09-15T07:… lifestyle Ken Burns    essay by ken bur… "<div class=\"inline…
+#> 1 2016-09-05T06:… postever… Jared Berns… Labor Day spillo… "   ,  , It’s Labor …
+#> 2 2016-01-18T18:… /politic… Team Fix     The 4th Democrat… "The complete transc…
+#> 3 2016-09-15T07:… lifestyle Ken Burns    essay by ken bur… ", , , Documentary f…
 #> 4 2016-01-14T19:… local     Robert McCa… City fails to me… "The District failed…
 #> 5 2016-02-26T17:… local     Keith L. Al… Veteran incited … "A Marine war vetera…
 #> 6 2016-07-26T21:… politics  Tom Hamburg… After DNC leaks,… "President Obama on …

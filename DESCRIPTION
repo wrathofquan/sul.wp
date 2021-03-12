@@ -4,7 +4,7 @@ Title: This Package Helps Access Stanford University Library's Washington Post C
 Version: 0.1.0
 Author: Josh Quan
 Maintainer: Josh Quan <joshquan@stanford.edu>
-Description: Shares data from the Washington Post archives 1970-2020 in format easily accessible in R
+Description: Shares data from Stanford's Washington Post Full Text Archives 1977-2020 in format easily accessible in R.
 License: file LICENSE
 Encoding: UTF-8
 LazyData: true
@@ -17,3 +17,6 @@ Imports:
 Remotes:
     redivis/bigrquery
 RoxygenNote: 7.1.1
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
