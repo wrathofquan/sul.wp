@@ -1,9 +1,12 @@
 #' search_articles
 #'
 #' Search by Keyword Across all Years or in One Specific Year
+#' @param query A Keyword to run
+#' @param year A Year
+#' @param strip_html Removes <HTML> tags
 #' @export
 #' @examples
-#' search_articles(query = "police", year = "1977")
+#' search_articles(query = "Brexit", year = "2016")
 
 
 search_articles <- function(query = query, year = NULL, strip_html = FALSE) {
@@ -18,7 +21,7 @@ search_articles <- function(query = query, year = NULL, strip_html = FALSE) {
   }
   if (strip_html == TRUE) {
     purrr::map_df(df, function(i) {
-      df <- gsub("<.*?>", "", i)
+      df <- gsub("<.*?>|^\\s*,(?:\\s*,)+\\s*|\\s*,(?:\\s*,)+\\s*$|\\s*(,)(?:\\s*,)+", "\\1", i)
     })
   } else {
     return(df)
