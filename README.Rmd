@@ -55,7 +55,7 @@ head(df_1977)
 ```{r}
 ## Search by case-insensitive keyword, restrict by year, remove <html> formatting from articles
 
-df_blm <- search_articles(query = "Black Lives Matter", year = "2016", strip_html = TRUE)
+df_blm <- search_articles(query = "Black Lives Matter", year = "2016", strip_html = FALSE)
 
 head(df_blm)
 
