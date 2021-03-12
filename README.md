@@ -16,7 +16,7 @@ install.packages("devtools")
 devtools::install_github("wrathofquan/sul.wp")
 ```
 
-## Authenticate
+### Authenticate
 
 ``` r
 library(sul.wp)
@@ -27,7 +27,7 @@ library(sul.wp)
 #redivis_auth("your-api-token")
 ```
 
-# Retrieve Articles by Year
+### Retrieve Articles by Year
 
 ``` r
 ## Get an entire year of articles
@@ -46,7 +46,7 @@ head(df_1999)
 #> 6 1999-05-20T00:0… local   <NA>    "Track and Field… "2A South, Who: Atholton, …
 ```
 
-# Search Corpora by Keyword
+### Search Corpora by Keyword
 
 ``` r
 ## Search by case-insensitive keyword, restrict by year, remove <html> formatting from articles

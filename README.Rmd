@@ -26,7 +26,7 @@ The goal of sul.wp is to help Stanford researchers access the Library's collecti
 install.packages("devtools")
 devtools::install_github("wrathofquan/sul.wp")
 ```
-## Authenticate
+### Authenticate
 
 ```{r}
 library(sul.wp)
@@ -38,7 +38,7 @@ library(sul.wp)
 ```
 
 
-# Retrieve Articles by Year 
+### Retrieve Articles by Year 
 
 ```{r}
 
@@ -50,7 +50,7 @@ head(df_1999)
 
 ```
 
-# Search Corpora by Keyword
+### Search Corpora by Keyword
 
 ```{r}
 ## Search by case-insensitive keyword, restrict by year, remove <html> formatting from articles
