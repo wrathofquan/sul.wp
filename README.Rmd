@@ -44,9 +44,9 @@ library(sul.wp)
 
 ## Get an entire year of articles
 
-df_1999 <- get_articles_year("1999")
+df_1977 <- get_articles_year("1977")
 
-head(df_1999)
+head(df_1977)
 
 ```
 
@@ -55,7 +55,7 @@ head(df_1999)
 ```{r}
 ## Search by case-insensitive keyword, restrict by year, remove <html> formatting from articles
 
-df_blm <- search_articles(query = "Black Lives Matter", year = "2020", strip_html = FALSE)
+df_blm <- search_articles(query = "Black Lives Matter", year = "2016", strip_html = FALSE)
 
 head(df_blm)
 
