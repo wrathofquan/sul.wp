@@ -6,7 +6,9 @@
 #' @param strip_html Removes <HTML> tags
 #' @export
 #' @examples
-#' search_articles(query = "Brexit", year = "2016")
+#' \dontrun{
+#' search_articles(query = "Brexit", year = "2016", strip_html = FALSE)
+#' }
 
 
 search_articles <- function(query = query, year = NULL, strip_html = FALSE) {
