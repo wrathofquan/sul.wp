@@ -4,7 +4,9 @@
 #' @param year A year
 #' @export
 #' @examples
+#' \dontrun{
 #' get_articles_year("1977")
+#' }
 
 get_articles_year <- function(year) {
   sql <- paste0("SELECT publish_date, section, authors, title, paragraphs FROM `sul.washington_post.articles_", year, "`")

@@ -13,5 +13,7 @@ get_articles_year(year)
 Get a Single Years Worth of Articles
 }
 \examples{
+\dontrun{
 get_articles_year("1977")
+}
 }
