@@ -1,6 +1,8 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
+![](https://travis-ci.org/wrathofquan/sul.wp.svg?branch=master)
+
 # sul.wp
 
 <!-- badges: start -->
