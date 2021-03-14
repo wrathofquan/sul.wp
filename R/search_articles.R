@@ -24,6 +24,7 @@ search_articles <- function(query = query, year = NULL, strip_html = FALSE) {
   if (strip_html == TRUE) {
     purrr::map_df(df, function(i) {
       df <- gsub("<.*?>|\\B,+", "", i, perl = TRUE)
+      df <- trimws(df)
     })
   } else {
     return(df)
