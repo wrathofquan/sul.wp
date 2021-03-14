@@ -23,7 +23,7 @@ search_articles <- function(query = query, year = NULL, strip_html = FALSE) {
   }
   if (strip_html == TRUE) {
     purrr::map_df(df, function(i) {
-      df <- gsub("<.*?>|^\\s*,(?:\\s*,)+\\s*|\\s*,(?:\\s*,)+\\s*$|\\s*(,)(?:\\s*,)+", "\\1", i)
+      df <- gsub("<.*?>|\\B,+", "", i, perl = TRUE)
     })
   } else {
     return(df)
