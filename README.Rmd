@@ -12,7 +12,7 @@ knitr::opts_chunk$set(
   out.width = "100%"
 )
 ```
-![](https://travis-ci.org/wrathofquan/sul.wp.svg?branch=master)
+[![Build Status](https://travis-ci.org/wrathofquan/sul.wp.svg?branch=master)](https://travis-ci.org/wrathofquan/sul.wp)
 
 # sul.wp
 
@@ -58,7 +58,7 @@ head(df_1977)
 ```{r}
 ## Search by case-insensitive keyword, restrict by year, remove <html> formatting from articles
 
-df_blm <- search_articles(query = "Black Lives Matter", year = "2016", strip_html = FALSE)
+df_blm <- search_articles(query = "Black Lives Matter", year = "2016", strip_html = TRUE)
 
 head(df_blm)
 

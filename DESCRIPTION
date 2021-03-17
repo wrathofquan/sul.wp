@@ -1,7 +1,7 @@
 Package: sul.wp
 Type: Package
 Title: This Package Helps Access Stanford University Library's Washington Post Collection
-Version: 0.1.0
+Version: 0.0.1
 Author: Josh Quan
 Maintainer: Josh Quan <joshquan@stanford.edu>
 Description: Shares data from Stanford's Washington Post Full Text Archives 1977-2020 in format easily accessible in R.
@@ -12,6 +12,7 @@ Depends:
     R (>= 3.6)
 Imports: 
     DBI,
+    dplyr,
     redivis.bigrquery,
     purrr
 Remotes:
