@@ -29,10 +29,12 @@ devtools::install_github("wrathofquan/sul.wp")
 ```
 ### Authenticate
 
+![](assets/redivis-api.gif)
+
 ```{r}
 library(sul.wp)
 
-## Authenticate with Redivis/BigQuery 
+## Authenticate with Redivis
 ## Instructions on how to access your token: https://apidocs.redivis.com/authorization
 
 # redivis_auth("your-api-token")
