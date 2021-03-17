@@ -35,7 +35,7 @@ devtools::install_github("wrathofquan/sul.wp")
 library(sul.wp)
 
 ## Authenticate with Redivis
-## Instructions on how to access your token: https://apidocs.redivis.com/authorization
+## More on Redivis tokens: https://apidocs.redivis.com/authorization
 
 # redivis_auth("your-api-token")
 ```
