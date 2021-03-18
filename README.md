@@ -12,7 +12,7 @@ Status](https://travis-ci.org/wrathofquan/sul.wp.svg?branch=master)](https://tra
 The goal of sul.wp is to help Stanford researchers access the Library’s
 collection of Washington Post Full-Text Archives through R
 
-## Installation
+### Installation
 
 ``` r
 install.packages("devtools")
@@ -27,12 +27,12 @@ devtools::install_github("wrathofquan/sul.wp")
 library(sul.wp)
 
 ## Authenticate with Redivis
-## More on Redivis tokens: https://apidocs.redivis.com/authorization
+## More on Redivis API: https://apidocs.redivis.com/authorization
 
 # redivis_auth("your-api-token")
 ```
 
-### Retrieve Articles by Year
+### Retrieve Articles by Single Year
 
 ``` r
 ## Get an entire year of articles
@@ -40,34 +40,53 @@ library(sul.wp)
 df_1977 <- get_articles_year("1977")
 
 head(df_1977)
-#> # A tibble: 6 x 5
-#>   publish_date     section authors title             paragraphs                 
-#>   <chr>            <chr>   <chr>   <chr>             <chr>                      
-#> 1 1977-11-21T00:0… local   <NA>    "Kilda Harrell, … "Kilda Malcolm Harrell, 84…
-#> 2 1977-06-08T00:0… local   <NA>    "Chilly Weather … "Blustery winds and unreas…
-#> 3 1977-11-10T00:0… local   <NA>    "Greening-up a B… "Harry Roberts, Washington…
-#> 4 1977-11-11T00:0… local   <NA>    "Edgar Meritt Do… "Edgar Meritt Douglass, 74…
-#> 5 1977-02-02T00:0… local   <NA>    "Benjamin Denio,… "Benjamin W. (Ben) Denio, …
-#> 6 1977-07-07T00:0… local   <NA>    "Commuters get 6… "The U.S. Supreme Court th…
+#> # A tibble: 6 x 8
+#>   publish_date  section kicker authors title   blurb paragraphs    article_url  
+#>   <chr>         <chr>   <chr>  <chr>   <chr>   <chr> <chr>         <chr>        
+#> 1 1977-01-18T0… local   NA     <NA>    "Today… NA    "Washington:… /archive/loc…
+#> 2 1977-12-08T0… local   NA     <NA>    "Teach… NA    "The D.C. Pu… /archive/loc…
+#> 3 1977-02-16T0… local   NA     <NA>    "Today… NA    "Washington:… /archive/loc…
+#> 4 1977-07-08T0… local   NA     <NA>    "Const… NA    "Constance B… /archive/loc…
+#> 5 1977-11-15T0… local   NA     <NA>    "Today… NA    "Washington … /archive/loc…
+#> 6 1977-05-07T0… local   NA     <NA>    "Today… NA    "Weather: To… /archive/loc…
+
+dim(df_1977)
+#> [1] 30390     8
+```
+
+### Retrieve Articles by Multiple Years
+
+``` r
+## To get multiple years of articles, you can use purrr, apply, or a 'for' loop.
+## Example using purrr:
+
+years <- c("1977", "1980")
+
+df_twoYears <- purrr::map_dfr(years, get_articles_year) 
+
+dim(df_twoYears)
+#> [1] 67114     8
 ```
 
 ### Search Corpus by Keyword
 
 ``` r
-## Search by case-insensitive keyword, restrict by year, remove <html> formatting from articles
+## Search title and paragraphs of articles using case-insensitive keyword, restrict by year, remove <html> formatting from articles
+## Note that some articles are assets like embedded videos or image slide-shows
+## use of strip_html will likely return empty strings for these types of content. 
 
 df_blm <- search_articles(query = "Black Lives Matter", year = "2016", strip_html = TRUE)
 
 head(df_blm)
-#> # A tibble: 6 x 5
-#>   publish_date    section   authors      title             paragraphs           
-#>   <chr>           <chr>     <chr>        <chr>             <chr>                
-#> 1 2016-09-05T06:… postever… Jared Berns… Labor Day spillo… "It’s Labor Day, so …
-#> 2 2016-01-18T18:… /politic… Team Fix     The 4th Democrat… "The complete transc…
-#> 3 2016-09-15T07:… lifestyle Ken Burns    essay by ken bur… "Documentary filmmak…
-#> 4 2016-01-14T19:… local     Robert McCa… City fails to me… "The District failed…
-#> 5 2016-02-26T17:… local     Keith L. Al… Veteran incited … "A Marine war vetera…
-#> 6 2016-07-26T21:… politics  Tom Hamburg… After DNC leaks,… "President Obama on …
+#> # A tibble: 6 x 8
+#>   publish_date  section  kicker  authors  title  blurb  paragraphs  article_url 
+#>   <chr>         <chr>    <chr>   <chr>    <chr>  <chr>  <chr>       <chr>       
+#> 1 2016-09-05T0… posteve… NA      Jared B… Labor… Union… "It’s Labo… /posteveryt…
+#> 2 2016-01-18T1… /politi… The Fix Team Fix The 4… NA     "The compl… /news/the-f…
+#> 3 2016-09-15T0… lifesty… Magazi… Ken Bur… essay… The f… "Documenta… /lifestyle/…
+#> 4 2016-01-14T1… local    Local   Robert … City … The L… "The Distr… /local/dc-f…
+#> 5 2016-02-26T1… local    Local   Keith L… Veter… Attor… "A Marine … /local/publ…
+#> 6 2016-07-26T2… politics Politi… Tom Ham… After… Presi… "President… /politics/a…
 ```
 
 <!-- What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so: -->

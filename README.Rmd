@@ -21,7 +21,7 @@ knitr::opts_chunk$set(
 
 The goal of sul.wp is to help Stanford researchers access the Library's collection of Washington Post Full-Text Archives through R
 
-## Installation
+### Installation
 
 ``` r
 install.packages("devtools")
@@ -35,13 +35,13 @@ devtools::install_github("wrathofquan/sul.wp")
 library(sul.wp)
 
 ## Authenticate with Redivis
-## More on Redivis tokens: https://apidocs.redivis.com/authorization
+## More on Redivis API: https://apidocs.redivis.com/authorization
 
 # redivis_auth("your-api-token")
 ```
 
 
-### Retrieve Articles by Year 
+### Retrieve Articles by Single Year 
 
 ```{r}
 
@@ -51,12 +51,33 @@ df_1977 <- get_articles_year("1977")
 
 head(df_1977)
 
+dim(df_1977)
+
 ```
+
+### Retrieve Articles by Multiple Years 
+
+```{r}
+## To get multiple years of articles, you can use purrr, apply, or a 'for' loop.
+## Example using purrr:
+
+years <- c("1977", "1980")
+
+df_twoYears <- purrr::map_dfr(years, get_articles_year) 
+
+dim(df_twoYears)
+
+```
+
+
+
 
 ### Search Corpus by Keyword
 
 ```{r}
-## Search by case-insensitive keyword, restrict by year, remove <html> formatting from articles
+## Search title and paragraphs of articles using case-insensitive keyword, restrict by year, remove <html> formatting from articles
+## Note that some articles are assets like embedded videos or image slide-shows
+## use of strip_html will likely return empty strings for these types of content. 
 
 df_blm <- search_articles(query = "Black Lives Matter", year = "2016", strip_html = TRUE)
 
