@@ -4,16 +4,18 @@
 \alias{get_articles_year}
 \title{get_articles_year}
 \usage{
-get_articles_year(year)
+get_articles_year(year, ...)
 }
 \arguments{
 \item{year}{A year}
+
+\item{...}{other arguments passed to methods}
 }
 \description{
 Get a Single Years Worth of Articles
 }
 \examples{
 \dontrun{
-get_articles_year("1977")
+get_articles_year("1977", ...)
 }
 }

@@ -2,10 +2,11 @@
 #'
 #' Get a Single Years Worth of Articles
 #' @param year A year
+#' @param ... other arguments passed to methods
 #' @export
 #' @examples
 #' \dontrun{
-#' get_articles_year("1977")
+#' get_articles_year("1977", ...)
 #' }
 
 get_articles_year <- function(year, ...) {

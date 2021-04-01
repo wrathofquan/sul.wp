@@ -29,7 +29,7 @@ devtools::install_github("wrathofquan/sul.wp")
 ```
 ### Authenticate
 
-![](assets/redivis-api.gif)
+![](inst/redivis-api.gif)
 
 ```{r}
 library(sul.wp)

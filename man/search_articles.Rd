@@ -4,7 +4,7 @@
 \alias{search_articles}
 \title{search_articles}
 \usage{
-search_articles(query = query, year = NULL, strip_html = FALSE)
+search_articles(query = query, year = NULL, strip_html = FALSE, ...)
 }
 \arguments{
 \item{query}{A Keyword to run}
@@ -12,12 +12,14 @@ search_articles(query = query, year = NULL, strip_html = FALSE)
 \item{year}{A Year}
 
 \item{strip_html}{Removes <HTML> tags}
+
+\item{...}{other arguments passed to methods}
 }
 \description{
 Search by Keyword Across all Years or in One Specific Year
 }
 \examples{
 \dontrun{
-search_articles(query = "Brexit", year = "2016", strip_html = FALSE)
+search_articles(query = "Brexit", year = "2016", strip_html = FALSE, ...)
 }
 }

@@ -4,10 +4,11 @@
 #' @param query A Keyword to run
 #' @param year A Year
 #' @param strip_html Removes <HTML> tags
+#' @param ... other arguments passed to methods
 #' @export
 #' @examples
 #' \dontrun{
-#' search_articles(query = "Brexit", year = "2016", strip_html = FALSE)
+#' search_articles(query = "Brexit", year = "2016", strip_html = FALSE, ...)
 #' }
 
 
