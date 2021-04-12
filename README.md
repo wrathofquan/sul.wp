@@ -21,6 +21,8 @@ devtools::install_github("wrathofquan/sul.wp")
 
 ### Authenticate
 
+First, go to redivis.com and log in with your SUNet ID. Then create your API token:
+
 ![](inst/redivis-api.gif)
 
 ``` r
